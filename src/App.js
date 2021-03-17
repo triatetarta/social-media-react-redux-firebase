@@ -1,10 +1,17 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
+import Feed from './components/Feed';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 
 const App = () => {
   return (
     <div className='app'>
-      <h1>lets build a social media</h1>
+      <Header />
+      <div className='app__body'>
+        <Sidebar />
+        <Feed />
+      </div>
     </div>
   );
 };
