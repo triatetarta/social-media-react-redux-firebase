@@ -1,5 +1,7 @@
 import React from 'react';
 import { Avatar } from '@material-ui/core';
+import PostOption from './PostOption';
+import { postOptions } from '../data';
 import './Post.scss';
 
 const Post = ({ name, description, message, photoUrl }) => {
@@ -15,6 +17,12 @@ const Post = ({ name, description, message, photoUrl }) => {
 
       <div className='post__body'>
         <p>{message}</p>
+      </div>
+
+      <div className='post__buttons'>
+        {postOptions.map((option) => {
+          return <PostOption key={option.id} {...option} />;
+        })}
       </div>
     </div>
   );

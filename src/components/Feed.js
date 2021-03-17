@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CreateIcon from '@material-ui/icons/Create';
 import './Feed.scss';
 import InputOption from './InputOption';
-import { postOptions } from '../data';
+import { writeQuarter } from '../data';
 import Post from './Post';
 
 const Feed = () => {
+  const [posts, setPosts] = useState([]);
+
+  const sendPost = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className='feed'>
       <div className='feed__inputContainer'>
@@ -13,15 +19,21 @@ const Feed = () => {
           <CreateIcon />
           <form>
             <input placeholder='Write a quarter' type='text' />
-            <button type='submit'>Send</button>
+            <button onClick={sendPost} type='submit'>
+              Send
+            </button>
           </form>
         </div>
         <div className='feed__inputOptions'>
-          {postOptions.map((item) => {
+          {writeQuarter.map((item) => {
             return <InputOption key={item.id} {...item} />;
           })}
         </div>
       </div>
+
+      {posts.map((post, index) => {
+        <Post key={index} />;
+      })}
 
       <Post
         name='Dimitrios Chatziioannou'
