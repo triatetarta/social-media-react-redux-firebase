@@ -4,7 +4,7 @@ import PostOption from './PostOption';
 import { postOptions } from '../data';
 import './Post.scss';
 
-const Post = ({ name, description, message, photoUrl }) => {
+const Post = ({ data: { name, description, message, photoUrl } }) => {
   return (
     <div className='post'>
       <div className='post__header'>
