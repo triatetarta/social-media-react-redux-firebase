@@ -19,4 +19,35 @@
       font-weight: 400;
     }
   }
+
+  .widgets__article {
+    display: flex;
+    padding: 0.625rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: whitesmoke;
+    }
+
+    .widgets__articleLeft {
+      color: #705df2;
+      margin-right: 0.313rem;
+
+      .MuiSvgIcon-root {
+        font-size: 0.75rem;
+      }
+    }
+    .widgets__articleLeft {
+      flex: 1;
+
+      h4 {
+        font-size: 0.875rem;
+      }
+
+      p {
+        font-size: 0.75rem;
+        color: gray;
+      }
+    }
+  }
 }
