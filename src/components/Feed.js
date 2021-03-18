@@ -6,8 +6,11 @@ import { writeQuarter } from '../data';
 import Post from './Post';
 import { db } from '../firebase';
 import firebase from 'firebase';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
 
 const Feed = () => {
+  const user = useSelector(selectUser);
   const [posts, setPosts] = useState([]);
   const [input, setInput] = useState('');
 
@@ -30,10 +33,10 @@ const Feed = () => {
     e.preventDefault();
 
     db.collection('posts').add({
-      name: 'Dimitrios Chatziioannou',
-      description: 'This is an amazing test',
+      name: user.displayName,
+      description: user.email,
       message: input,
-      photoUrl: '',
+      photoUrl: user.photoUrl || '',
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
 

@@ -19,7 +19,7 @@ export const navOptions = [
   {
     id: 5,
     title: 'Me',
-    avatar: `${process.env.PUBLIC_URL + '/assets/avatar.jpg'}`,
+    avatar: true,
   },
 ];
 
