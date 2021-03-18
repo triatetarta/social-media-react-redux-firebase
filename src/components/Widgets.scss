@@ -1,0 +1,22 @@
+.widgets {
+  position: sticky;
+  top: 5rem;
+  flex: 0.2;
+  background-color: #fff;
+  border-radius: 0.625rem;
+  border: 1px solid lightgray;
+  height: fit-content;
+  padding-bottom: 0.625rem;
+
+  .widgets__Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem;
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+}
